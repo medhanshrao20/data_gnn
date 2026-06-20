@@ -1,0 +1,18 @@
+cd "path of folder"
+
+git init
+
+git branch -M main
+
+git add .
+
+git commit -m "Initial commit"
+
+git remote add origin repo link 
+
+git push -u origin main
+
+
+after u get results run the generate_sattion_diagram.py file 
+
+https://github.com/medhanshrao20/data_gnn.git
