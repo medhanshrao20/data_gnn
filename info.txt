@@ -16,3 +16,8 @@ git push -u origin main
 after u get results run the generate_sattion_diagram.py file 
 
 https://github.com/medhanshrao20/data_gnn.git
+
+
+py -3.10 -m venv venv
+
+.\venv\Scripts\Activate.ps1
