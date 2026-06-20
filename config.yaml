@@ -1,0 +1,42 @@
+# ==========================================
+# INDUSTRIAL-GRADE GRAPH ANALYTICS SETTINGS
+# ==========================================
+
+# Directory Configurations
+data_dir: "data"
+results_dir: "results"
+random_seed: 42
+timestamp_col: null
+
+# Preprocessing & Data Cleaning
+outlier_method: "iqr"                   # Options: 'iqr', 'z_score', 'isolation_forest'
+outlier_treatment: "clip"               # Options: 'clip', 'winsorize'
+missing_impute_strategy: "auto"         # Options: 'auto', 'interpolate', 'median', 'knn'
+missing_threshold_drop: 0.5             # Drop columns if missing > 50%
+near_constant_threshold: 0.0001         # Variance threshold below which a column is constant
+redundant_correlation_threshold: 0.99   # Drop columns with > 99% correlation to other columns
+
+# Graph Construction
+correlation_threshold: 0.5             # Pearson threshold for Correlation Graph
+top_k_neighbors: 5                      # Number of neighbors for Top-K Graph
+weighted_graph: true                    # Retain negative/positive weights in Correlation Graph
+
+# Learnable Adjacency (PyTorch Optimization)
+learnable_epochs: 150
+learnable_lr: 0.01
+learnable_weight_decay: 0.0001
+
+# Graph Neural Network Embeddings
+gnn_epochs: 200
+gnn_lr: 0.01
+gnn_hidden_dim: 16
+gnn_embedding_dim: 8
+gnn_weight_decay: 0.0001
+
+# System Runtime
+multiprocessing: true
+strict_mode: false
+drop_duplicates: true
+drop_redundant_columns: true
+num_workers: null                        # Set to an integer to limit processes, null defaults to CPU count - 1
+log_level: "INFO"                       # Options: 'DEBUG', 'INFO', 'WARNING', 'ERROR'
